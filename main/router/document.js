@@ -4,16 +4,18 @@ const { router, middleware } = require('@app');
 
 const { auth, model } = middleware;
 
-router.post('/document', model('document'), 'insert');
+const document = model('document');
 
-router.get('/document', auth, model('document'), 'find');
+router.post('/document', document, 'insert');
 
-router.get('/sdfsf/document', model('document'), 'find');
+router.get('/document', auth, document, 'find');
 
-router.get('/document/:id', model('document'), 'findPk');
+router.get('/sdfsf/document', document, 'find');
 
-router.put('/document/:id', model('document'), 'updatePk');
+router.get('/document/:id', document, 'findPk');
 
-router.delete('/document/:id', model('document'), 'deletePk');
+router.put('/document/:id', document, 'updatePk');
 
-router.delete('/document', model('document'), 'delete');
+router.delete('/document/:id', document, 'deletePk');
+
+router.delete('/document', document, 'delete');

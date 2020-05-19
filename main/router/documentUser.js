@@ -4,6 +4,8 @@ const { router, middleware } = require('@app');
 
 const { auth, model } = middleware;
 
-router.get("/documentUser", auth, model('documentUser'), 'find');
+const documentUser = model('documentUser');
 
-router.get("/documentUser/:id", auth, model('documentUser'), 'findPk');
+router.get("/documentUser", auth, documentUser, 'find');
+
+router.get("/documentUser/:id", auth, documentUser, 'findPk');
