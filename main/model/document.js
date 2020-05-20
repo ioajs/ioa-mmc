@@ -2,7 +2,7 @@
 
 const { ormv } = require('@app');
 
-const model = ormv.model('document', {
+module.exports = ormv.model('document', {
    'id': {
       type: 'integer',
       primaryKey: true,
@@ -22,8 +22,4 @@ const model = ormv.model('document', {
       type: 'string',
       allowNull: false,
    }
-})
-
-// model.sync();
-
-module.exports = model;
+});
