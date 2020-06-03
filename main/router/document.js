@@ -1,10 +1,10 @@
 'use strict';
 
-const { router, middleware } = require('@app');
+const { router, middleware, model } = require('@app');
 
-const { auth, model } = middleware;
+const { auth, modelCtx } = middleware;
 
-const document = model('document');
+const document = modelCtx(model.document);
 
 router.post('/document', document, 'insert');
 

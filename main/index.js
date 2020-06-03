@@ -2,7 +2,7 @@
 
 const app = require('@app');
 
-app.on('@ioa/config');
-app.on('@ioa/ormv');
-app.on('@ioa/koa');
-app.on('./lib');
+app.use('@ioa/config');
+app.use('@ioa/ormv');
+app.use('@ioa/koa');
+app.use('./lib');

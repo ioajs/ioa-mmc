@@ -1,6 +1,6 @@
 {
    "name": "@ioa/mmc",
-   "version": "9.8.2",
+   "version": "9.8.3",
    "description": "数据库模型的中间件、控制器扩展组件",
    "scripts": {
       "start": "node index.js",
@@ -18,7 +18,7 @@
       "@koa/cors": "^3.1.0",
       "axios": "^0.18.1",
       "faker": "^4.1.0",
-      "ioa": "^9.8.5",
+      "ioa": "^9.8.6",
       "typea": "^5.0.5"
    },
    "files": [
