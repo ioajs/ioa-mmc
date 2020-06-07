@@ -6,6 +6,6 @@ const { auth, modelCtx } = middleware;
 
 const documentUser = modelCtx(model.documentUser);
 
-router.get("/documentUser", auth, documentUser, 'find');
+router.get("/documentUser", auth, documentUser, 'model.find');
 
-router.get("/documentUser/:id", auth, documentUser, 'findPk');
+router.get("/documentUser/:id", auth, documentUser, 'model.findPk');

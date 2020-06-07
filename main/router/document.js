@@ -6,16 +6,16 @@ const { auth, modelCtx } = middleware;
 
 const document = modelCtx(model.document);
 
-router.post('/document', document, 'insert');
+router.post('/document', document, 'model.insert');
 
-router.get('/document', auth, document, 'find');
+router.get('/document', auth, document, 'model.find');
 
-router.get('/sdfsf/document', document, 'find');
+router.get('/sdfsf/document', document, 'model.find');
 
-router.get('/document/:id', document, 'findPk');
+router.get('/document/:id', document, 'model.findPk');
 
-router.put('/document/:id', document, 'updatePk');
+router.put('/document/:id', document, 'model.updatePk');
 
-router.delete('/document/:id', document, 'deletePk');
+router.delete('/document/:id', document, 'model.deletePk');
 
-router.delete('/document', document, 'delete');
+router.delete('/document', document, 'model.delete');
