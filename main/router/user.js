@@ -4,7 +4,9 @@ const { router, middleware, model } = require('@app');
 
 const { auth, modelCtx } = middleware;
 
-const user = modelCtx(model.user);
+const user = modelCtx(model.user, {
+  exclude: ['password']
+});
 
 router.get("/user", auth, user, 'model.find');
 

@@ -134,6 +134,8 @@ test('get count', async t => {
       }
    })
 
+   console.log(result.data)
+
    const schema = typea({
       list: [Object],
       count: Number
