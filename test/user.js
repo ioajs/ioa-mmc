@@ -83,6 +83,17 @@ test('get details', async t => {
 });
 
 
+test('get details null', async t => {
+
+   const result = await axios.get(`/user/1111111111`, {
+      headers: { sign: "xxxx" }
+   });
+
+   t.ok(result.data === null, '返回值必须为null');
+
+});
+
+
 test('post', async t => {
 
    const result = await axios.post("/user", generate());

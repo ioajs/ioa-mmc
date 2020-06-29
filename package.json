@@ -1,11 +1,11 @@
 {
    "name": "@ioa/mmc",
-   "version": "9.8.6",
+   "version": "9.8.7",
    "description": "数据库模型的中间件、控制器扩展组件",
    "scripts": {
       "start": "node index.js",
       "dev": "node index.js",
-      "test": "jtf -w"
+      "test": "jtf"
    },
    "dependencies": {
       "@ioa/ormv": "^9.8.9"
