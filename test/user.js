@@ -105,7 +105,7 @@ test('post', async t => {
 });
 
 
-test('update', async t => {
+test('update pk', async t => {
 
    const result = await axios.put("/user/81", generate());
 
