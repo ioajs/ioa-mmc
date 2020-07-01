@@ -71,24 +71,17 @@ test('post', async t => {
 
 test('update', async t => {
 
-   const result = await axios.put("/@document",
-      {
-         id: 88,
-         ...generate()
-      },
+   const result = await axios.put("/@document/1",
+      { ...generate() },
       {
          params: {
-            where: 'title.eq(Gina);',
+            // where: 'title.eq(Gina);',
             limit: 2,
          }
       }
    );
 
-   const schema = typea({ rowCount: Number })
-
-   const { data, error } = schema.verify(result.data)
-
-   t.ok(data, error);
+   t.deepEqual(result.data.id, 1);
 
 });
 
@@ -97,11 +90,7 @@ test('updatePk', async t => {
 
    const result = await axios.put("/@document/30", generate());
 
-   const schema = typea({ rowCount: Number })
-
-   const { data, error } = schema.verify(result.data)
-
-   t.ok(data, error);
+   t.deepEqual(result.data, null);
 
 });
 
@@ -110,8 +99,6 @@ test('delete', async t => {
 
    const result = await axios.delete("/@document/113");
 
-   console.log(result.data)
-
-   t.deepEqual(result.data, { rowCount: 0 });
+   t.deepEqual(result.data, null);
 
 });

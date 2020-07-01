@@ -15,11 +15,7 @@ test('destroy', async t => {
       }
    });
 
-   const schema = typea({ rowCount: Number })
-
-   const { data, error } = schema.strictVerify(result.data)
-
-   t.ok(data, error);
+   t.deepEqual(result.data, null);
 
 });
 
@@ -28,10 +24,6 @@ test('destroyPk', async t => {
 
    const result = await axios.delete("/user/12");
 
-   const schema = typea({ rowCount: Number })
-
-   const { data, error } = schema.verify(result.data)
-
-   t.ok(data, error);
+   t.deepEqual(result.data, null);
 
 });

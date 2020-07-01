@@ -22,7 +22,7 @@ function generate() {
 
 test('update', async t => {
 
-   const result = await axios.put("/user",
+   const result = await axios.put("/user/81",
       {
          email: '123@qq.com'
       },
@@ -32,25 +32,16 @@ test('update', async t => {
          }
       });
 
-   const schema = typea({ rowCount: Number })
 
-   const { data, error } = schema.verify(result.data)
-
-   t.ok(data, error);
-
-
+   t.deepEqual(result.data.email, '123@qq.com');
 
 });
 
 
 test('updatePk', async t => {
 
-   const result = await axios.put("/user/30", generate());
+   const result = await axios.put("/user/81", generate());
 
-   const schema = typea({ rowCount: Number })
-
-   const { data, error } = schema.verify(result.data)
-
-   t.ok(data, error);
+   t.deepEqual(result.data.id, 81);
 
 });

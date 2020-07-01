@@ -97,11 +97,7 @@ test('updatePk', async t => {
 
    const result = await axios.put("/document/30", generate());
 
-   const schema = typea({ rowCount: Number })
-
-   const { data, error } = schema.verify(result.data)
-
-   t.ok(data, error);
+   t.deepEqual(result.data, null);
 
 });
 
@@ -110,8 +106,6 @@ test('delete', async t => {
 
    const result = await axios.delete("/document/113");
 
-   console.log(result.data)
-
-   t.deepEqual(result.data, { rowCount: 0 });
+   t.deepEqual(result.data, null);
 
 });

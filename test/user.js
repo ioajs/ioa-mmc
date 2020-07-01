@@ -130,6 +130,6 @@ test('delete', async t => {
 
    const result = await axios.delete("/user/113");
 
-   t.deepEqual({ rowCount: 0 }, result.data);
+   t.deepEqual(result.data, null);
 
 });
