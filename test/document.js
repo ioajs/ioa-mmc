@@ -1,6 +1,6 @@
 'use strict';
 
-const test = require('jtf');
+const test = require('jmr');
 const typea = require('typea');
 const axios = require('axios');
 const faker = require('faker');
@@ -16,6 +16,23 @@ function generate() {
    }
 
 }
+
+test('post', async t => {
+
+   const result = await axios.post("/document", generate());
+
+   const schema = typea({
+      id: Number,
+      title: String,
+      document: String,
+   })
+
+   const { data, error } = schema.verify(result.data);
+
+   t.ok(data, error);
+
+});
+
 
 test('get', async t => {
 
@@ -38,23 +55,6 @@ test('get', async t => {
 test('get details', async t => {
 
    const result = await axios.get(`/document/1`);
-
-   const schema = typea({
-      id: Number,
-      title: String,
-      document: String,
-   })
-
-   const { data, error } = schema.verify(result.data);
-
-   t.ok(data, error);
-
-});
-
-
-test('post', async t => {
-
-   const result = await axios.post("/document", generate());
 
    const schema = typea({
       id: Number,
@@ -104,8 +104,8 @@ test('updatePk', async t => {
 
 test('delete', async t => {
 
-   const result = await axios.delete("/document/113");
+   const result = await axios.delete("/document/1");
 
-   t.deepEqual(result.data, null);
+   t.deepEqual(result.data.id, 1);
 
 });
