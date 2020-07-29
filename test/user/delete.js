@@ -3,7 +3,6 @@
 const test = require('jmr');
 const typea = require('typea');
 const axios = require('axios');
-const ioa = require('../../index.js');
 
 test('destroy', async t => {
 

@@ -4,7 +4,6 @@ const test = require('jmr');
 const typea = require('typea');
 const faker = require('faker');
 const axios = require('axios');
-const ioa = require('../../index.js');
 
 function generate() {
 

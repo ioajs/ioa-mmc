@@ -1,6 +1,6 @@
 {
    "name": "@ioa/mmc",
-   "version": "9.10.2",
+   "version": "9.11.0",
    "description": "数据库模型的中间件、控制器扩展组件",
    "scripts": {
       "start": "node index.js",

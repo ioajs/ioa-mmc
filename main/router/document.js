@@ -2,9 +2,9 @@
 
 const { router, middleware, model } = require('@app');
 
-const { auth, modelCtx } = middleware;
+const { auth } = middleware;
 
-const document = modelCtx(model.document);
+const document = model.$mid(model.document);
 
 router.post('/document', document, 'model.insert');
 
