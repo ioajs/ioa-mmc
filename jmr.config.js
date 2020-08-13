@@ -2,4 +2,6 @@
 
 const test = require('jmr');
 
-test.ioa = require('./index.js');
+const ioa = require('./index.js');
+
+test.ioa = ioa;
