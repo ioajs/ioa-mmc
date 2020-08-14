@@ -51,6 +51,24 @@ test('get', async t => {
 });
 
 
+test('get like', async t => {
+
+   const result = await axios.get(`/document`, {
+      params: {
+         select: 'uid,id,title,createdAt',
+         where: 'title.like(%April%)',
+      }
+   });
+
+   const schema = typea({ list: Array });
+
+   const { data, error } = schema.verify(result.data);
+
+   t.ok(data, error);
+
+});
+
+
 test('get details', async t => {
 
    const result = await axios.get(`/document/1`);
