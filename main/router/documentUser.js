@@ -1,10 +1,10 @@
 'use strict';
 
-const { router, middleware, model } = require('@app');
+const { router, middleware, model, mtm } = require('@app');
 
 const { auth } = middleware;
 
-const documentUser = model.$mid(model.documentUser);
+const documentUser = mtm(model.documentUser);
 
 router.get("/documentUser", auth, documentUser, 'model.find');
 

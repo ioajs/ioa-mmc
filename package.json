@@ -1,6 +1,6 @@
 {
    "name": "@ioa/mmc",
-   "version": "9.11.2",
+   "version": "10.0.0",
    "description": "数据库模型的中间件、控制器扩展组件",
    "scripts": {
       "start": "node index.js",
@@ -9,17 +9,17 @@
    },
    "dependencies": {
       "@ioa/ormv": "^9.8.11",
-      "ormv": "^3.2.3"
+      "ormv": "^3.2.7"
    },
    "author": "xiangle",
    "license": "ISC",
    "devDependencies": {
       "@ioa/config": "^9.5.0",
-      "@ioa/koa": "^9.8.3",
+      "@ioa/koa": "^9.8.5",
       "@koa/cors": "^3.1.0",
       "axios": "^0.18.1",
       "faker": "^4.1.0",
-      "ioa": "^9.8.8",
+      "ioa": "^9.8.10",
       "typea": "^5.2.0"
    },
    "files": [
